@@ -27,4 +27,8 @@ $days = $months * 16;
 $days_per_language = $days / $num_languages;
 echo $days_per_language;
 
+//PART4: degree
+echo "\n\nTASK4 \n";
+echo 8**2;
+
 ?>
