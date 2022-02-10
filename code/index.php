@@ -314,4 +314,15 @@ $arr = [1,2,3];
 if (count($arr) == 3)
     echo "\n\tlength of array is " .  count($arr);
 
+////////////////
+//Part17: Cycles
+echo "\n\nPart17: Cycles\n\t"; 
+$counter = 0;
+while ($counter++ < 20)
+{
+    echo "\n\t";
+    for ($i = 0; $i < $counter; $i++)
+        echo "x ";
+}
+
 ?>
