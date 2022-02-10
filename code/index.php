@@ -146,4 +146,15 @@ $iter = 0;
 while ($iter < 10 && $sum <= 10)
     $sum += $vector[$iter++];
 echo "\n\t" . $iter;
+
+/////////////////////
+//Part13: Functions-1
+echo "\n\nPart13: Functions-1"; 
+function printStringReturnNumber($numInt) : int
+{
+    echo "\n\tthere's your number " . $numInt;
+    return $numInt;
+}
+$myNum = printStringReturnNumber(34);
+echo "\n\t" . $myNum;
 ?>
