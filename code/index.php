@@ -280,4 +280,38 @@ echo "\n\t" . count($arr);
 //Point9
 $arr = ['a','b','c','d','e'];      
 echo "\n\t" . $arr[count($arr)-1] . " " . $arr[count($arr)-2];
+
+//////////////////////////////
+//Part16: If/else construction
+echo "\n\nPart16: If/else construction\n\t"; 
+//Point1
+function biggerThanTen($a,$b) : bool      
+{
+    return ($a+$b>10) ? True : False;
+}
+echo biggerThanTen(6,5);
+//Point2
+function compare($a,$b) : bool      
+{
+    return ($a == $b) ? True : False;
+}
+echo "\n\t" . compare(5,5) . "\n\t";
+//Point3
+$test = 0;                          
+echo ($test == 0) ? "верно\n\t" : "\n\t";
+//Point4
+$sum = 0;                           
+$age = 76;
+if ($age < 10 or $age > 99)
+    echo "out of range";
+else
+{
+    numerize($age,$sum);
+    echo ($sum <= 9) ? "single digit" : "double digit";
+}
+//Point5
+$arr = [1,2,3];
+if (count($arr) == 3)
+    echo "\n\tlength of array is " .  count($arr);
+
 ?>
