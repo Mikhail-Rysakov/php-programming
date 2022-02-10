@@ -157,4 +157,67 @@ function printStringReturnNumber($numInt) : int
 }
 $myNum = printStringReturnNumber(34);
 echo "\n\t" . $myNum;
+
+/////////////////////
+//Part14: Functions-2
+echo "\n\nPart14: Functions-2"; 
+//Point1
+function increaseEnthusiasm($str) : string           
+{
+    return $str . "!";
+}
+echo "\n\t" . increaseEnthusiasm('warning');
+//Point2
+function repeatThreeTimes($str) : string             
+{
+    return $str.$str.$str;
+}
+echo "\n\t" . repeatThreeTimes('seven');
+//Point3
+echo "\n\t" . increaseEnthusiasm(repeatThreeTimes('knock')); 
+//Point4
+function cut($str, $num = 10) : string               
+{
+    $len = strlen($str);
+    if ($len > $num)
+        return mb_substr($str, 0, -($len-$num));
+    return $str;
+}
+echo "\n\t" . cut('cutmeoffplease') . "\n\t";
+//Point5
+$vector = [1,2,3,4,5];                               
+function recursiveCycle($array, $iter=0) : void
+{
+    echo $array[$iter++] . " ";
+    if ($iter < sizeof($array))
+        recursiveCycle($array, $iter);
+    return;    
+}
+recursiveCycle($vector);
+//Point6
+function numerize($num, &$sum) : void                
+{
+    
+    $dotMover = ($num/10);
+    $nextNum = (int)$dotMover;
+    $precDigit = ($dotMover - $nextNum)*10;
+    $sum += round($precDigit);
+    if ($nextNum > 0)
+        numerize($nextNum,$sum);
+}
+function nineAndLess($num, &$sum) : void
+{
+    numerize($num, $sum);
+    if ($sum > 9)
+    {
+        $num = $sum;
+        $sum = 0;
+        nineAndLess($num, $sum);
+    }
+}
+$randomNumber = 24357;   
+$sum = 0;
+nineAndLess($randomNumber, $sum);
+echo "\n\t" . $sum;
+
 ?>
