@@ -325,4 +325,59 @@ while ($counter++ < 20)
         echo "x ";
 }
 
+//////////////////////////////////
+//Part18: Combination of functions
+echo "\n\nPart18: Combination of functions\n\t"; 
+//Point1
+$vector = [1,7,2,5,81,6];                    
+$res = 0;
+function average($vector, &$res, $iter=0) : void
+{
+    $res += $vector[$iter++];
+    if ($iter < count($vector))
+        average($vector,$res,$iter);
+    else
+        $res /= count($vector);
+}
+average($vector, $res);
+echo $res;
+//Point2
+$num = 100;                         
+$sum1to100 = $num/2 * ($num + 1);
+echo "\n\t" . $sum1to100 . "\n\t";
+//Point3
+$vector = [1,7,2,5,81,6];                    
+function rootization($vector, $iter=0) : void
+{
+    $vector[$iter] = sqrt($vector[$iter]);
+    $iter++;
+    echo $vector[$iter-1] . " ";
+    if ($iter < count($vector))
+        rootization($vector,$iter);
+}
+rootization($vector);   
+//Point4
+$vector = [];
+function alphabet(&$arr, $char=1)
+{
+    $arr[chr($char+96)] = $char;
+    echo "\n\t'" . chr($char+96) ."' =>" . $char;
+    if ($char < 26)
+        alphabet($arr, $char+=1);
+}
+alphabet($vector);
+//Point5
+$str = '1234567890';
+$strVector = str_split($str,1);
+$sum = 0;
+function sumByTwo($str,&$sum=0,$iter=0) : void
+{
+    $singleNum = $str[$iter]*10 + $str[$iter+1];
+    $iter+=2;
+    $sum += $singleNum;
+    if ($iter < count($str))
+        sumByTwo($str,$sum,$iter);
+}
+sumByTwo($strVector, $sum);
+echo "\n\t" . $sum;
 ?>
