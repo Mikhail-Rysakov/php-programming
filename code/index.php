@@ -220,4 +220,64 @@ $sum = 0;
 nineAndLess($randomNumber, $sum);
 echo "\n\t" . $sum;
 
+////////////////
+//Part15: Arrays
+echo "\n\nPart15: Arrays\n\t"; 
+//Point1
+$vector = ["x"];                                     
+for ($i = 1; $i < 5; $i++)
+    $vector[] = $vector[$i-1] . "x";
+for ($i = 0; $i < 5; $i++)
+    echo $vector[$i] . " ";
+//Point2
+function arrayFill($array, $symb, $num) : void       
+{
+    for ($i = 0; $i < $num; $i++)
+    {
+        $array[] = $symb;
+        echo $array[$i] . " ";
+    }
+}
+$vector = [];
+echo "\n\t";
+arrayFill($vector, "y", 5);  
+//Point3
+$vector = [[1,2,3], [4,5],[6]];                       
+$sum = 0;
+foreach ($vector as $i)
+    foreach ($i as $j)
+        $sum += $j;
+echo "\n\t" . $sum . "\n\t";
+//Point4
+$vector = [[]];                   
+for ($i = 0; $i < 3; $i++)
+{
+    for ($j = 0; $j < 3; $j++)
+    {
+        $vector[$i][] = $i*3 + $j + 1;
+        echo $vector[$i][$j] . " ";
+    }
+}
+//Point5    
+$vector = [2,5,3,9];              
+$result = $vector[0]*$vector[1] + $vector[2]*$vector[3];
+echo "\n\t" . $result;
+//Point6
+$user = ['name'=>"Mikhail",       
+         'surname'=>"Rysakov",
+         'patronymic'=>'Sergeevich'];
+echo "\n\t" . $user['name'] . " " . $user['surname'] .
+    " " . $user['patronymic'];
+//Point7
+$date = ['year'=>'2022',          
+         'month'=>'02',
+         'day'=>'09'];
+echo "\n\t" . $date['year'] . "-" . $date['month'] . 
+    "-" . $date['day'];
+//Point8
+$arr = ['a','b','c','d','e'];      
+echo "\n\t" . count($arr);
+//Point9
+$arr = ['a','b','c','d','e'];      
+echo "\n\t" . $arr[count($arr)-1] . " " . $arr[count($arr)-2];
 ?>
