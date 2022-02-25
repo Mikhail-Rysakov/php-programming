@@ -8,4 +8,10 @@ $matches = [];
 preg_match_all($mask, $phrase, $matches);
 print_r($matches);
 
+
+////////////////////////////
+//Part2: Conversion of numbers
+$expression = "a1b2c3";
+echo preg_replace_callback('/[0-9]/', function ($expression) {   //Использование лямбда-функции (анонимной-функции)
+    return strtoupper($expression[0] ** 3);}, $expression);
 ?>
