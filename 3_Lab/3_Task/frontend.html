@@ -14,3 +14,26 @@
         <p><input type="submit" value="add"></p>
     </form>
 </body>
+
+
+<?php 
+$Smartphones = scandir("Category/Smartphones"); // Каталоги с содержимым
+$Computers = scandir("Category/Computers"); 
+$Laptops = scandir("Category/Laptops"); 
+ 
+echo "Smartphones: ";
+foreach ($Smartphones as $i) {
+    if($i > 1)
+        echo "\n\n" . $i;
+}
+echo "Computers: ";
+foreach ($Computers as $i) {
+    if($i > 1)
+        echo "\n\n" . $i;
+}
+echo "Laptops: ";
+foreach ($Laptops as $i) {
+    if($i > 1)
+        echo "\n\n" . $i;
+}
+?>
